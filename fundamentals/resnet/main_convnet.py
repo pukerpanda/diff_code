@@ -44,3 +44,4 @@ line(loss_list,
     labels={"x": "Num batches seen", "y": "Cross entropy loss"},
     title="ConvNet training on MNIST",
     width=700)
+
