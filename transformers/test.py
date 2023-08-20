@@ -1,7 +1,7 @@
 
 import torch as t
 
-from model import MLP, Attention, Embed, LayerNorm, PosEmbed, Config, TransformerBlock, Unembed
+from model import MLP, Attention, DemoTransformer, Embed, LayerNorm, PosEmbed, Config, TransformerBlock, Unembed
 from transformer_lens import HookedTransformer
 
 def rand_float_test(cls, shape):
@@ -66,3 +66,6 @@ load_gpt2_test(TransformerBlock, reference_gpt2.blocks[0], cache["resid_pre", 0]
 
 rand_float_test(Unembed, [2, 4, 768])
 load_gpt2_test(Unembed, reference_gpt2.unembed, cache["ln_final.hook_normalized"])
+
+rand_int_test(DemoTransformer, [2, 4])
+load_gpt2_test(DemoTransformer, reference_gpt2, tokens)
